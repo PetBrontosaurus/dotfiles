@@ -1,0 +1,15 @@
+qa to exit all windows
+ctrl+w + ctrlw to change windows
+:res -5 to shrink a window (+5 to grow)
+ctrl+p to open fzf
+find+replace with match groups vvv
+        :s/\(.*\)myText\(.*)/\1newText\2/ 
+find+rename items vvvv 
+	find ./**/*fileMatch-* | sed 's/\(.*\)myText\(.*)/\1TheOldName\2 \1NewName\2/' | xargs -n 2 mv
+find+collect items:
+	find ./**/*fileMatch-* -printf "%p ./targetDir/%f\n" | xargs -n 2 cp
+:reg
+ctrl+N to autocomplete (ctrl+P is overwritten with fzf)
+ctrl+shift+6 to jump back to previous file
+:ls to view contents of buffers, :bn or :bp to jump back and forth
+gf goes to file when hovering over a path
